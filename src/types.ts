@@ -19,13 +19,23 @@ export interface VerificationInput {
 }
 
 export interface VerificationDomain {
-  name: string;
+  root: string;
+  is_subdomain: boolean;
   /**
    * The age of the domain in days.
    * Can be a number or a string like "Login to view registration date" if not authenticated with sufficient privileges.
    */
   domain_age_in_days: number | string;
-  provider: string;
+  /**
+   * Only populated for disposable, relay, or free email providers.
+   * null for domains that do not match any known provider classification.
+   */
+  provider: string | null;
+}
+
+export interface MxRecord {
+  hostname: string;
+  priority: number;
 }
 
 export interface MxProvider {
@@ -36,7 +46,7 @@ export interface MxProvider {
 
 export interface VerificationMailServer {
   mx_found: boolean;
-  mx_records: string[];
+  mx_records: MxRecord[];
   mx_provider: MxProvider[];
 }
 

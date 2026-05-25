@@ -1,6 +1,6 @@
 {
   "name": "@stopreg/stopreg",
-  "version": "1.0.3",
+  "version": "2.1.0",
   "description": "The official Node.js SDK for StopReg.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
