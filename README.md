@@ -41,7 +41,7 @@ async function runCheck() {
 
   // 2. Verify a domain
   const domainResult = await stopreg.verification.checkDomain('gmail.com');
-  console.log('Provider:', domainResult.data.domain.provider);
+  console.log('Email Provider:', domainResult.data.domain.email_provider);
 }
 
 runCheck();
@@ -74,7 +74,7 @@ Verify a domain before allowing a user to register:
 const result = await stopreg.verification.checkDomain('stopreg.com');
 
 console.log(result.data.domain.name);          // "stopreg.com"
-console.log(result.data.domain.provider);      // "google"
+console.log(result.data.domain.email_provider);      // "google"
 console.log(result.data.mail_server.mx_found); // true
 ```
 

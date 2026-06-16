@@ -27,10 +27,10 @@ export interface VerificationDomain {
    */
   domain_age_in_days: number | string;
   /**
-   * Only populated for disposable, relay, or free email providers.
-   * null for domains that do not match any known provider classification.
+   * The email provider name if a match is found in either the Email Domains table or MX Matching table.
+   * null if no provider match is found or provider is "Unknown".
    */
-  provider: string | null;
+  email_provider: string | null;
 }
 
 export interface MxRecord {
